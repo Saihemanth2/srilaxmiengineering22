@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Laxmi Engineering Center | Medak</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#202122;background:white;line-height:1.6}
+header{background:#f8f9fa;padding:18px;border-bottom:1px solid #ccc}
+.head{max-width:1000px;margin:auto;display:flex;align-items:center;gap:15px}
+.logo{width:75px;height:75px;object-fit:contain}
+h1{font-size:23px;margin:0;font-family:Georgia,serif}
+nav{background:#eee;padding:12px;text-align:center;position:sticky;top:0}
+nav a{margin:8px;color:#0645ad;text-decoration:none}
+main{max-width:950px;margin:25px auto;padding:0 15px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #aaa;padding-bottom:8px}
+.shop-image{display:block;max-width:500px;width:100%;max-height:400px;object-fit:contain;margin:20px auto}
+.info,.card{border:1px solid #ccc;padding:16px;margin:20px 0;border-radius:5px}
+.info{background:#f8f9fa;max-width:650px;margin:20px auto}
+.row{display:grid;grid-template-columns:115px 1fr;gap:8px;padding:8px 0;border-bottom:1px solid #ddd;overflow-wrap:anywhere}
+.button{display:inline-block;background:#087b43;color:white;padding:10px 14px;margin:5px 4px 5px 0;text-decoration:none;border-radius:5px;border:0;cursor:pointer}
+.blue{background:#1769d2}
+.gray{background:#555}
+label{display:block;margin-top:12px;font-weight:bold}
+input,textarea,select{width:100%;padding:11px;margin-top:5px;border:1px solid #aaa;border-radius:4px;font:inherit}
+footer{text-align:center;background:#f1f3f5;padding:20px;margin-top:30px}
+@media(max-width:500px){h1{font-size:18px}.logo{width:60px;height:60px}.row{grid-template-columns:95px 1fr}nav a{margin:4px}}
+</style>
+</head>
+
+<body>
+<header>
+<div class="head">
+<img class="logo"
+src="https://i.supaimg.com/3d0d1c18-2f02-4d5d-992c-6b3ad6d21204/1727f8c3-1236-441d-97d2-f9cbd2b46f5f.jpg"
+alt="Shop Logo">
+<div>
+<h1>SRI LAXMI ENGINEERING CENTER</h1>
+<p>Medak, Telangana | Established 1988</p>
+</div>
+</div>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#details">Shop Details</a>
+<a href="#contact">Contact</a>
+<a href="#attendance">Attendance</a>
+<a href="#feedback">Feedback</a>
+</nav>
+
+<main>
+<section id="about">
+<h2>Sri Laxmi Engineering Center</h2>
+<p>
+Welcome to Sri Laxmi Engineering Center, MG Road, near Shivaji
+Statue, Medak, Telangana. Established in 1988.
+Contact our shop for product enquiries and business information.
+</p>
+
+<img class="shop-image"
+src="https://i.supaimg.com/3d0d1c18-2f02-4d5d-992c-6b3ad6d21204/5b8ea8f6-6cd5-4fb1-bd5f-cc1e66523b1e.jpg"
+alt="Sri Laxmi Engineering Center">
+</section>
+
+<section class="info" id="details">
+<h2>Shop Details</h2>
+<div class="row"><strong>Business</strong><span>Sri Laxmi Engineering Center</span></div>
+<div class="row"><strong>Established</strong><span>1988</span></div>
+<div class="row"><strong>Address</strong><span>MG Road, Shivaji Statue, Medak - 502110, Telangana</span></div>
+<div class="row"><strong>Phone 1</strong><a href="tel:9392079056">9392079056</a></div>
+<div class="row"><strong>Phone 2</strong><a href="tel:8919200344">8919200344</a></div>
+<div class="row"><strong>Phone 3</strong><a href="tel:8247379977">8247379977</a></div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<div class="card">
+<a class="button" href="tel:9392079056">Call 9392079056</a>
+<a class="button" href="tel:8919200344">Call 8919200344</a>
+<a class="button" href="tel:8247379977">Call 8247379977</a>
+<br>
+<a class="button" href="https://wa.me/919392079056" target="_blank" rel="noopener">WhatsApp</a>
+<a class="button gray" href="https://www.google.com/maps/search/?api=1&query=Sri+Laxmi+Engineering+Center+MG+Road+Medak+502110" target="_blank" rel="noopener">Google Maps</a>
+</div>
+</section>
+
+<section id="attendance">
+<h2>Employee Attendance</h2>
+<div class="card">
+<p>Monday to Saturday: Working days</p>
+<p>Sunday: Closed</p>
+<label for="employee">Employee Name</label>
+<input id="employee" placeholder="Enter employee name">
+<label for="workDate">Date</label>
+<input id="workDate" type="date">
+<label for="status">Attendance</label>
+<select id="status">
+<option value="Present">Present</option>
+<option value="Absent">Absent</option>
+</select>
+<button class="button blue" onclick="markAttendance()">Mark Attendance</button>
+<p id="attendanceMessage" role="status"></p>
+<p><strong>Attendance records for this browser:</strong></p>
+<ul id="attendanceList"></ul>
+</div>
+</section>
+
+<section id="feedback">
+<h2>Customer Feedback</h2>
+<div class="card">
+<form id="feedbackForm">
+<label for="customerName">Your Name</label>
+<input id="customerName" required placeholder="Enter your name">
+<label for="customerPhone">Phone Number</label>
+<input id="customerPhone" type="tel" required placeholder="Enter phone number">
+<label for="customerMessage">Message</label>
+<textarea id="customerMessage" required placeholder="Your enquiry or feedback"></textarea>
+<button class="button blue" type="submit">Send via WhatsApp</button>
+</form>
+</div>
+</section>
+</main>
+
+<footer>
+<p>© <span id="year"></span> Sri Laxmi Engineering Center</p>
+<p>MG Road, Shivaji Statue, Medak - 502110</p>
+<p>Established in 1988</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function markAttendance(){
+  const name = document.getElementById("employee").value.trim();
+  const date = document.getElementById("workDate").value;
+  const status = document.getElementById("status").value;
+  const message = document.getElementById("attendanceMessage");
+
+  if(!name || !date){
+    message.textContent = "Enter employee name and date.";
+    return;
+  }
+
+  if(new Date(date + "T12:00:00").getDay() === 0){
+    message.textContent = "Sunday is closed. Choose Monday to Saturday.";
+    return;
+  }
+
+  const record = {name, date, status};
+  let records = [];
+
+  try {
+    records = JSON.parse(localStorage.getItem("sl ecAttendance") || "[]");
+    if(!Array.isArray(records)) records = [];
+  } catch(e) {
+    records = [];
+  }
+
+  records.push(record);
+  localStorage.setItem("sl ecAttendance", JSON.stringify(records));
+  displayAttendance();
+  message.textContent = "Attendance saved in this browser.";
+  document.getElementById("employee").value = "";
+}
+
+function displayAttendance(){
+  const list = document.getElementById("attendanceList");
+  list.replaceChildren();
+  let records = [];
+
+  try {
+    records = JSON.parse(localStorage.getItem("sl ecAttendance") || "[]");
+    if(!Array.isArray(records)) records = [];
+  } catch(e) {}
+
+  records.forEach(record => {
+    const item = document.createElement("li");
+    item.textContent = record.date + " — " + record.name + " — " + record.status;
+    list.appendChild(item);
+  });
+}
+
+document.getElementById("feedbackForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const message = document.getElementById("customerMessage").value.trim();
+
+  const text = "Sri Laxmi Engineering Center Feedback\n" +
+    "Name: " + name + "\nPhone: " + phone + "\nMessage: " + message;
+
+  const url = "https://wa.me/919392079056?text=" + encodeURIComponent(text);
+  window.open(url, "_blank");
+});
+
+displayAttendance();
+</script>
+</body>
+</html>
